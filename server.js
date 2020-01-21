@@ -20,7 +20,7 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'CompilerReact','build')));
 
 app.get("/test", (req, res) => {
-  res.send("Testibg");
+  res.send("Testing");
 })
 
 app.get('/*',(req,res)=>{
