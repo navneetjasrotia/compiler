@@ -1,6 +1,5 @@
 import React , {Component} from 'react'
 import AceEditor from 'react-ace';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from 'muicss/lib/react/button';
 import brace from 'brace'
 import 'brace/mode/java';
@@ -37,7 +36,7 @@ class compiler extends Component{
     input:this.customRef.current.value,
     loading:true,
     },async ()=>{
-    const rawResponse = await fetch('http://127.0.0.1:5001/', {
+    const rawResponse = await fetch('https://onlinewebcompiler.herokuapp.com/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
