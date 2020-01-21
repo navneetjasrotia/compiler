@@ -19,6 +19,9 @@ app.use(express.static('public'));
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'CompilerReact','build')));
 
+app.get("/test", (req, res) => {
+  res.send("Testibg");
+})
 
 app.get('/*',(req,res)=>{
   res.sendFile(path.join(__dirname,'/CompilerReact/build/index.html'));
