@@ -13,7 +13,6 @@ import  './button.css'
 import './select.css'
 
 class compiler extends Component{
-
  constructor(props){
    super(props)
    this.state={
@@ -30,13 +29,18 @@ class compiler extends Component{
    this.customRef=React.createRef()
  }
 
+componentDidMount()
+{
+  document.body.style = 'background:#F9F9F9'
+}
+
  sendData=()=>{
     var array=[]
     this.setState({
     input:this.customRef.current.value,
     loading:true,
     },async ()=>{
-    const rawResponse = await fetch('https://onlinewebcompiler.herokuapp.com/', {
+    const rawResponse = await fetch('http://127.0.0.1:5001', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -145,16 +149,16 @@ fileChange=(e)=>{
     return(
       <div>
       <div style={{height:'100%',marginTop:'10px',marginBottom:'50px',textAlign:'center'}}>
-      <h2>Online Compiler For C Cpp Java and Python</h2>
+      <h2>Online IDE For C Cpp Java and Python</h2>
       </div>
-      <div style={{marginBottom:'50px',height:'10px',width:'100%'}}>
-      <select className="select-css" onChange={this.themeChange} style={{float:'left',width:'150px',marginLeft:'250px'}}>
+      <div style={{backgroundColor:'white',boxShadow:'0px 4px 8px #ccc',borderRadius:'6px',borderTop:'1px solid grey',borderLeft:'1px solid grey',borderRight:'1px solid grey',height:'60px',width:'890px', marginLeft:'250px'}}>
+      <select className="select-css" onChange={this.themeChange} style={{marginTop:'10px',float:'left',width:'150px',marginLeft:'10px'}}>
       <option value="chrome">Chrome</option>
       <option value="dracula">Dracula</option>
       <option value="monokai">Monokai</option>
       <option value="github">Github</option>
       </select>
-      <select className="select-css" onChange={this.fileChange} style={{float:'left',width:'150px',marginLeft:'590px'}}>
+      <select className="select-css" onChange={this.fileChange} style={{float:'left',marginTop:'10px',width:'150px',marginLeft:'575px'}}>
       <option value="c">C</option>
       <option value="cpp">C++</option>
       <option value="java">Java</option>

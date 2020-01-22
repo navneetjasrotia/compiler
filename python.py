@@ -1,1 +1,1 @@
-print("hello navi !")
+print("hello world")

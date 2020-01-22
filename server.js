@@ -2,15 +2,14 @@ var express=require('express')
 var app=express()
 var cors=require('cors')
 var bodyParser=require('body-parser')
-var fs=require('fs');
-var bodyParser=require('body-parser');
+var fs=require('fs')
 var urlencodedParser=bodyParser.urlencoded({extended:true});
 var path=require('path')
 var cFile=require('./library/cFile.js')
 var cppFile=require('./library/cppFile.js')
 var javaFile=require('./library/javaFile.js')
 var pythonFile=require('./library/pythonFile.js')
-const { exec,execFile,spawn } = require('child_process');
+const { exec,execFile,spawn } = require('child_process')
 const port = process.env.PORT|| 5001;
 
 app.use(bodyParser.json());
@@ -19,9 +18,6 @@ app.use(express.static('public'));
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'CompilerReact','build')));
 
-app.get("/test", (req, res) => {
-  res.send("Testing");
-})
 
 app.get('/*',(req,res)=>{
   res.sendFile(path.join(__dirname,'/CompilerReact/build/index.html'));
