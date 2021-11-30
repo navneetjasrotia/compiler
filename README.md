@@ -9,5 +9,3 @@ Here I have created some libraries to compile and execute these languages code a
 These files are present in library folder
 
 <b>Libraries Name:</b> cFile.js, cppFile.js, javaFile.js and pythonFile.js
-
-Currently this project is hosted in aws at http://13.127.119.245:5001/
